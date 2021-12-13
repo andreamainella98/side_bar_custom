@@ -18,19 +18,19 @@ class SideBarContainer extends StatefulWidget {
 }
 
 class _SideBarContainerState extends State<SideBarContainer> {
-  late Animation<double> width;
+  late Animation<double> _width;
 
   @override
   void initState() {
     super.initState();
-    width = Tween(begin: widget.config.collapseWidth, end: widget.config.maxWidth).animate(
+    _width = Tween(begin: widget.config.collapseWidth, end: widget.config.maxWidth).animate(
       CurvedAnimation(parent: widget.animationController, curve: widget.config.sideBarCurve),
     );
   }
 
   Widget _buildAnimation(BuildContext context, Widget? child) {
     return SizedBox(
-      width: width.value,
+      width: _width.value,
       child: widget.child,
     );
   }

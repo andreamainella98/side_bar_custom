@@ -25,22 +25,22 @@ class SideBar extends StatefulWidget {
 }
 
 class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
-  late SideBarConfig config;
+  late SideBarConfig _config;
   late AnimationController _animationController;
   late PageController _pageController;
-  late int selectedIndex;
+  late int _selectedIndex;
 
   bool _openSideBar = false;
 
   @override
   void initState() {
     super.initState();
-    config = widget.config ?? SideBarConfig();
-    selectedIndex = widget.initialIndex;
+    _config = widget.config ?? SideBarConfig();
+    _selectedIndex = widget.initialIndex;
 
-    _pageController = PageController(initialPage: selectedIndex);
+    _pageController = PageController(initialPage: _selectedIndex);
     _animationController = AnimationController(
-      duration: config.sideBarAnimationDuration,
+      duration: _config.sideBarAnimationDuration,
       vsync: this,
     );
   }
@@ -53,20 +53,20 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return config.enableFloating
+    return _config.enableFloating
         ? Stack(
             children: [
               _generateBody(),
               Padding(
-                padding: config.floatingPadding,
+                padding: _config.floatingPadding,
                 child: ClipRRect(
-                  borderRadius: config.borderRadius,
+                  borderRadius: _config.borderRadius,
                   child: _buildChild(),
                 ),
               ),
             ],
           )
-        : config.enableResizeBody
+        : _config.enableResizeBody
             ? Flex(
                 direction: Axis.horizontal,
                 children: [
@@ -79,7 +79,7 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
             : Stack(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: config.collapseWidth),
+                    padding: EdgeInsets.only(left: _config.collapseWidth),
                     child: _generateBody(),
                   ),
                   _buildChild(),
@@ -88,7 +88,7 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
   }
 
   Widget _generateBody() {
-    if (config.enablePageView) {
+    if (_config.enablePageView) {
       return PageView.builder(
         scrollDirection: Axis.vertical,
         physics: const NeverScrollableScrollPhysics(),
@@ -96,17 +96,17 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
         controller: _pageController,
       );
     }
-    return widget.children[selectedIndex];
+    return widget.children[_selectedIndex];
   }
 
   Widget _buildChild() {
     return Container(
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
-        color: config.backgroundColor,
+        color: _config.backgroundColor,
       ),
       child: SideBarContainer(
-        config: config,
+        config: _config,
         animationController: _animationController,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -118,9 +118,9 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
                 children: _generateItems(),
               ),
             ),
-            if (config.enableDivider) _generateIndent(),
+            if (_config.enableDivider) _generateDivider(),
             SideBarBottomButton(
-              config: config,
+              config: _config,
               animationController: _animationController,
               onTap: () async {
                 if (_openSideBar) {
@@ -143,18 +143,18 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
     for (int i = 0; i < widget.items.length; i++) {
       SideBarItem item = widget.items[i];
       temp.add(SideBarItemWidget(
-        config: config,
+        config: _config,
         text: item.text,
         tooltipText: item.tooltipText,
         icon: item.icon,
         openSideBar: _openSideBar,
-        selectedItem: selectedIndex == i,
+        selectedItem: _selectedIndex == i,
         onTapItem: () => setState(() {
-          selectedIndex = i;
-          if (config.enablePageView) {
+          _selectedIndex = i;
+          if (_config.enablePageView) {
             _pageController.animateToPage(
-              selectedIndex,
-              duration: config.sideBarAnimationDuration,
+              _selectedIndex,
+              duration: _config.sideBarAnimationDuration,
               curve: Curves.easeInOut,
             );
           }
@@ -164,12 +164,12 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
     return temp;
   }
 
-  Widget _generateIndent() {
+  Widget _generateDivider() {
     return Divider(
-      indent: config.dividerIndent,
-      endIndent: config.dividerIndent,
-      thickness: config.dividerThickness,
-      color: config.dividerColor,
+      indent: _config.dividerIndent,
+      endIndent: _config.dividerIndent,
+      thickness: _config.dividerThickness,
+      color: _config.dividerColor,
     );
   }
 

@@ -1,3 +1,5 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* First Release
+* Add component "SideBar, SideBarItem"
+* Add configuration "SideBarConfig"

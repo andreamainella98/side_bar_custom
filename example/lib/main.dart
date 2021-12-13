@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
             SideBarItem(text: "Dashboard", icon: Icons.home, tooltipText: "Dashboard page"),
             SideBarItem(text: "Add User", icon: Icons.add),
           ],
-          config: SideBarConfig(enablePageView: false),
+          config: SideBarConfig(enablePageView: true),
         ),
       ),
     );

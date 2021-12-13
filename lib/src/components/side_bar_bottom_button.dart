@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:side_bar_custom/src/support/side_bar_config.dart';
-import 'package:side_bar_custom/src/utils/colors.dart';
 
 class SideBarBottomButton extends StatefulWidget {
   final SideBarConfig config;
@@ -47,7 +46,7 @@ class _SideBarBottomButtonState extends State<SideBarBottomButton> {
             child: Icon(
               Icons.chevron_right,
               size: _iconSize,
-              color: sideBarUnselectedItemColor,
+              color: widget.config.bottomIconColor,
             ),
           ),
         ),

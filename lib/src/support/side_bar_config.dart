@@ -3,6 +3,7 @@ import 'package:side_bar_custom/src/utils/colors.dart';
 
 class SideBarConfig {
   final Color backgroundColor;
+  final Color bottomIconColor;
   final Color dividerColor;
   final Color selectedBoxColor;
   final Color selectedIconColor;
@@ -28,6 +29,7 @@ class SideBarConfig {
 
   SideBarConfig({
     this.backgroundColor = sideBarBackgroundColor,
+    this.bottomIconColor = sideBarUnselectedItemColor,
     this.dividerColor = sideBarDividerColor,
     this.selectedBoxColor = sideBarSelectedBoxColor,
     this.selectedIconColor = sideBarSelectedItemColor,

@@ -1,39 +1,40 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+<img src="https://raw.githubusercontent.com/andreamainella98/side_bar_custom/master/images/icon.png" style="display: block; margin-left: auto; margin-right: auto;">
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+## DESCRIPTION
+This package allows you to have a new simple and fast "SideBar" component, with many possibilities to customize it.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+## HOW TO INSTALL
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  side_bar_custom: ^1.0.0
 ```
 
-## Additional information
+## HOW TO USE
+```dart
+SideBar(
+    children: [
+        Center(
+            child: Text("Dashboard"),
+        ),
+        Center(
+            child: Text("Add User"),
+        ),
+    ],
+    items: [
+        SideBarItem(
+            text: "Dashboard", 
+            icon: Icons.home, 
+            tooltipText: "Dashboard page",
+        ),
+        SideBarItem(
+            text: "Add User", 
+            icon: Icons.add,
+        ),
+    ],
+),
+```
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+## SCREENSHOT
+<img src="https://raw.githubusercontent.com/andreamainella98/side_bar_custom/master/images/example.gif" width="425" height="320">
