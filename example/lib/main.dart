@@ -34,10 +34,19 @@ class _MyAppState extends State<MyApp> {
         body: SideBar(
           children: pages,
           items: [
-            SideBarItem(text: "Dashboard", icon: Icons.home, tooltipText: "Dashboard page"),
-            SideBarItem(text: "Add User", icon: Icons.add),
+            SideBarItem(
+              text: "Dashboard",
+              icon: Icons.home,
+              tooltipText: "Dashboard page",
+            ),
+            SideBarItem(
+              text: "Add User",
+              icon: Icons.add,
+            ),
           ],
-          config: SideBarConfig(enablePageView: true),
+          config: SideBarConfig(
+            enablePageView: true,
+          ),
         ),
       ),
     );

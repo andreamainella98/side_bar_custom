@@ -23,8 +23,14 @@ class _SideBarContainerState extends State<SideBarContainer> {
   @override
   void initState() {
     super.initState();
-    _width = Tween(begin: widget.config.collapseWidth, end: widget.config.maxWidth).animate(
-      CurvedAnimation(parent: widget.animationController, curve: widget.config.sideBarCurve),
+    _width = Tween(
+      begin: widget.config.collapseWidth,
+      end: widget.config.maxWidth,
+    ).animate(
+      CurvedAnimation(
+        parent: widget.animationController,
+        curve: widget.config.sideBarCurve,
+      ),
     );
   }
 

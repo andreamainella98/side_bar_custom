@@ -127,7 +127,10 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
                   _changeOpenSideBar();
                   await _animationController.reverse().orCancel;
                 } else {
-                  await _animationController.forward().orCancel.then((value) => _changeOpenSideBar());
+                  await _animationController
+                      .forward()
+                      .orCancel
+                      .then((value) => _changeOpenSideBar());
                 }
               },
             )

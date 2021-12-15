@@ -48,6 +48,8 @@ class _SideBarItemWidgetState extends State<SideBarItemWidget> {
       return Tooltip(
         message: widget.tooltipText!,
         preferBelow: true,
+        decoration: widget.config.tooltipDecoration,
+        textStyle: widget.config.tooltipTextStyle,
         waitDuration: const Duration(milliseconds: 500),
         child: _generateChild(),
       );
@@ -60,24 +62,31 @@ class _SideBarItemWidgetState extends State<SideBarItemWidget> {
       onTap: widget.onTapItem,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        color: widget.selectedItem ? widget.config.selectedBoxColor : widget.config.unselectedBoxColor,
+        color: widget.selectedItem
+            ? widget.config.selectedBoxColor
+            : widget.config.unselectedBoxColor,
         child: Row(
           children: [
             Padding(
               padding: EdgeInsets.all(_iconPadding / 2),
               child: Icon(
                 widget.icon,
-                color: widget.selectedItem ? widget.config.selectedIconColor : widget.config.unselectedIconColor,
+                color: widget.selectedItem
+                    ? widget.config.selectedIconColor
+                    : widget.config.unselectedIconColor,
                 size: _iconSize,
               ),
             ),
             Flexible(
               child: Text(
                 widget.text,
-                style: TextStyle(
-                  fontSize: widget.config.fontSize ?? _textSize,
-                  color: widget.selectedItem ? widget.config.selectedTextColor : widget.config.unselectedTextColor,
-                ),
+                style: widget.selectedItem
+                    ? widget.config.selectedTextStyle.copyWith(
+                        fontSize: widget.config.fontSize ?? _textSize,
+                      )
+                    : widget.config.unselectedTextStyle.copyWith(
+                        fontSize: widget.config.fontSize ?? _textSize,
+                      ),
                 overflow: TextOverflow.clip,
                 maxLines: widget.openSideBar ? 2 : 1,
               ),
