@@ -1,4 +1,6 @@
-<img src="https://raw.githubusercontent.com/andreamainella98/side_bar_custom/master/images/icon.png" style="display: block; margin-left: auto; margin-right: auto;">
+<div align="center">
+    <img src="https://raw.githubusercontent.com/andreamainella98/side_bar_custom/master/images/icon.png">
+</div>
 
 ## DESCRIPTION
 This package allows you to have a new simple and fast "SideBar" component, with many possibilities to customize it.
