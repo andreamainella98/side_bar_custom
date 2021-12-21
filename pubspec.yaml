@@ -1,6 +1,6 @@
 name: side_bar_custom
 description: This package allows you to have a simple, fast and practical custom SideBar, in fact you will be able to customize almost everything. Seeing is believing.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/andreamainella98/side_bar_custom
 
 environment:
