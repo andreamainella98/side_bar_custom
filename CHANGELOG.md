@@ -1,5 +1,9 @@
 ## 1.0.1
 
+* Update README
+
+## 1.0.1
+
 * Fix Tooltip decoration on SideBar
 * Add more info inside README
 * Add more info inside package with comment
