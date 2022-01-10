@@ -1,3 +1,7 @@
+## 1.0.3
+
+* Added feature IconSize for SideBarItem [GitHub Issue](https://github.com/andreamainella98/side_bar_custom/issues/1)
+
 ## 1.0.2
 
 * Update README
