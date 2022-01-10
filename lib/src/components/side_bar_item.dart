@@ -7,6 +7,7 @@ class SideBarItemWidget extends StatefulWidget {
   final String? tooltipText;
   final IconData icon;
   final bool openSideBar;
+  final bool endOpenSideBar;
   final bool selectedItem;
   final VoidCallback onTapItem;
 
@@ -16,6 +17,7 @@ class SideBarItemWidget extends StatefulWidget {
     required this.text,
     required this.icon,
     required this.openSideBar,
+    required this.endOpenSideBar,
     required this.onTapItem,
     this.tooltipText,
     this.selectedItem = false,
@@ -33,9 +35,16 @@ class _SideBarItemWidgetState extends State<SideBarItemWidget> {
   @override
   void initState() {
     super.initState();
-    _iconPadding = widget.config.collapseWidth / 5;
     _iconSize = widget.config.collapseWidth * 4 / 5;
-    _textSize = _iconPadding * 1.5;
+    if (widget.config.iconSize != null &&
+        widget.config.iconSize! <= _iconSize) {
+      _iconSize = widget.config.iconSize!;
+      _iconPadding = widget.config.collapseWidth - _iconSize;
+      _textSize = _iconSize > _iconPadding ? _iconPadding : _iconSize / 2 * 1.5;
+    } else {
+      _iconPadding = widget.config.collapseWidth / 5;
+      _textSize = _iconPadding * 1.5;
+    }
   }
 
   @override
@@ -88,7 +97,11 @@ class _SideBarItemWidgetState extends State<SideBarItemWidget> {
                         fontSize: widget.config.fontSize ?? _textSize,
                       ),
                 overflow: TextOverflow.clip,
-                maxLines: widget.openSideBar ? 2 : 1,
+                maxLines: (!widget.openSideBar
+                        ? widget.openSideBar
+                        : widget.endOpenSideBar)
+                    ? 2
+                    : 1,
               ),
             ),
           ],

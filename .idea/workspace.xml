@@ -8,16 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/components/side_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/components/side_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/components/side_bar_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/components/side_bar_container.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/components/side_bar_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/components/side_bar_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/support/side_bar_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/support/side_bar_config.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/support/side_bar_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/support/side_bar_item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="flutter.performance.tool.window.visible" value="true" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />

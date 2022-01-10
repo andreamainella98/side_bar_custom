@@ -62,6 +62,9 @@ class SideBarConfig {
   /// This optional value is used to set the size of the SideBarItem font.
   final double? fontSize;
 
+  /// This optional value is used to set the size of the SideBarItem icon.
+  final double? iconSize;
+
   /// This value determines the width of the SideBar when it is not collapsed.
   /// default value = 260.0
   final double maxWidth;
@@ -112,6 +115,7 @@ class SideBarConfig {
     this.dividerIndent = 10,
     this.dividerThickness = 0.6,
     this.fontSize,
+    this.iconSize,
     this.maxWidth = 260.0,
     this.tooltipDecoration,
     this.tooltipTextStyle,

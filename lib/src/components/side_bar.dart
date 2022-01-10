@@ -31,6 +31,7 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
   late int _selectedIndex;
 
   bool _openSideBar = false;
+  bool _endOpenAnimationSideBar = false;
 
   @override
   void initState() {
@@ -123,14 +124,17 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
               config: _config,
               animationController: _animationController,
               onTap: () async {
-                if (_openSideBar) {
-                  _changeOpenSideBar();
-                  await _animationController.reverse().orCancel;
+                _changeOpenSideBar();
+                if (!_openSideBar) {
+                  await _animationController
+                      .reverse()
+                      .orCancel
+                      .then((value) => _changeEndOpenSideBar());
                 } else {
                   await _animationController
                       .forward()
                       .orCancel
-                      .then((value) => _changeOpenSideBar());
+                      .then((value) => _changeEndOpenSideBar());
                 }
               },
             )
@@ -151,6 +155,7 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
         tooltipText: item.tooltipText,
         icon: item.icon,
         openSideBar: _openSideBar,
+        endOpenSideBar: _endOpenAnimationSideBar,
         selectedItem: _selectedIndex == i,
         onTapItem: () => setState(() {
           _selectedIndex = i;
@@ -179,6 +184,12 @@ class _SideBarState extends State<SideBar> with TickerProviderStateMixin {
   void _changeOpenSideBar() {
     setState(() {
       _openSideBar = !_openSideBar;
+    });
+  }
+
+  void _changeEndOpenSideBar() {
+    setState(() {
+      _endOpenAnimationSideBar = !_endOpenAnimationSideBar;
     });
   }
 }
